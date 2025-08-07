@@ -39,3 +39,40 @@ if __name__ == "__main__":
 ### API Key
 
 The script uses a pre-configured API key. If the key has expired or is invalid, the script will print an error message. You can obtain a free API key from the [World News API website](https://worldnewsapi.com) and replace the `api_key` variable in the `fetch_thai_economic_news` function.
+
+---
+
+## คำอธิบายภาษาไทย
+
+สคริปต์ `thai_news_fetcher.py` นี้ใช้สำหรับดึงข้อมูลข่าวจาก [World News API](https://worldnewsapi.com) โดยจะค้นหาข่าวเศรษฐกิจจากประเทศไทยตามวันที่ที่ระบุ
+
+### สิ่งที่ต้องมีก่อนเริ่มใช้งาน
+
+คุณต้องติดตั้ง Python และไลบรารี `requests` ก่อน
+
+สามารถติดตั้ง `requests` ผ่าน pip:
+```bash
+pip install requests
+```
+
+### วิธีการรันโปรแกรม
+
+คุณสามารถรันสคริปต์ได้โดยตรงผ่านเทอร์มินัล:
+```bash
+python thai_news_fetcher.py
+```
+ตามค่าเริ่มต้น สคริปต์จะดึงข่าวของวันที่ `2024-07-15`
+
+### วิธีการเปลี่ยนวันที่
+
+หากต้องการดึงข่าวสำหรับวันที่อื่น ให้เปิดไฟล์ `thai_news_fetcher.py` และแก้ไขค่าของตัวแปร `news_date` ในส่วนของ `if __name__ == "__main__":`
+```python
+if __name__ == "__main__":
+    # คุณสามารถเปลี่ยนวันที่เป็นวันที่ต้องการได้ในรูปแบบ 'YYYY-MM-DD'
+    news_date = "2024-07-16" # <-- แก้ไขค่านี้
+    # ...
+```
+
+### API Key
+
+สคริปต์นี้มีการตั้งค่า API Key ไว้ล่วงหน้า หาก API Key หมดอายุหรือไม่ถูกต้อง โปรแกรมจะแสดงข้อความแจ้งเตือน คุณสามารถรับ API Key ใหม่ได้ฟรีจาก [เว็บไซต์ World News API](https://worldnewsapi.com) แล้วนำมาใส่แทนที่ค่าของตัวแปร `api_key` ในฟังก์ชัน `fetch_thai_economic_news`
